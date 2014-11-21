@@ -173,7 +173,12 @@ header ul a strong {
   color: #fff;
   -webkit-font-smoothing: antialiased;
 }
-
+#mascots { margin: 15px 0 0 45px }
+.mascot { float: left; width: 180px; height: 276px; margin: 0 22px 20px 0 }
+.mascot a { color: #595959; font-family: 'Open Sans Bold', sans-serif }
+.mascot img { margin-bottom: 5px; padding-top: 20px; padding-bottom: 10px; border: 1px solid #f0f0f0 }
+.mascot:hover a { color: #b992d1 }
+.mascot:hover img { border: 1px solid #b992d1 }
 section {
   padding: 15px 20px;
   font-size: 15px;
