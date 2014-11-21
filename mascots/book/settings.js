@@ -1,0 +1,1 @@
+var mascotSections = new Array(['arm_r', 1, 3], ['arm_l', 1, 3], ['book', 1, 4], ['eyes', 1, 14], ['eyebrows', 1, 5], ['mouth', 1, 5], ['blush', 1, 2]);
