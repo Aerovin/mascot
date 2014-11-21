@@ -173,7 +173,7 @@ header ul a strong {
   color: #fff;
   -webkit-font-smoothing: antialiased;
 }
-#mascots { margin: 0 5px; }
+#mascots {display: block;float: left;margin: 0 5px;padding: 0;}
 .mascot { float: left;margin: 0 5px; }
 .mascot a { color: #595959; font-family: 'Open Sans Bold', sans-serif }
 .mascot img { margin-bottom: 5px; padding:0;border: 1px solid #f0f0f0 }
