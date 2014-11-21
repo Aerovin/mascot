@@ -176,7 +176,7 @@ header ul a strong {
 #mascots {display: block;float: left;margin: 0 5px;padding: 0;}
 .mascot { float: left;margin: 0 5px; }
 .mascot a { color: #595959; font-family: 'Open Sans Bold', sans-serif }
-.mascot img { margin-bottom: 5px; padding:0;border: 1px solid #f0f0f0 }
+.mascot img { margin-bottom: 5px; padding:0;border: 1px solid #f0f0f0;height: 207px;width: 175px; }
 .mascot:hover a { color: #b992d1 }
 .mascot:hover img { border: 1px solid #b992d1 }
 section {
