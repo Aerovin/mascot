@@ -3,10 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Mascot by aerovin</title>
-
+    <title>Free Online Mascot Creator | Mascot.ga</title>
+	<meta name="Description" content="Mascot maker that allows you to create awesome mascots in seconds with the click of a couple of buttons.">
+	<meta name="Keywords" content="mascot creator">
+	<link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <script src="javascripts/scale.fix.js"></script>
     <script src="javascripts/function.js"></script>
     <script src="javascripts/jquery.js"></script>
@@ -19,32 +22,26 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Mascot</h1>
-        <p>Mascot maker that allows you to create awesome mascots in seconds</p>
-        <p class="view"><a href="https://github.com/aerovin/mascot">View the Project on GitHub <small>aerovin/mascot</small></a></p>
+        <h1><a href="index.html"><i class="fa fa-paw"></i> Mascot.ga</a></h1>
+        <p>Create awesome mascots in seconds</p>
         <ul>
-          <li><a href="https://github.com/aerovin/mascot/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/aerovin/mascot/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/aerovin/mascot">View On <strong>GitHub</strong></a></li>
+          <li><a href="create.html">Start <strong>Create</strong></a></li>
+          <li><a href="sample.html">View <strong>Sample</strong></a></li>
+          <li><a href="tutorial.html">Learn <strong>Tutorial</strong></a></li>
         </ul>
       </header>
       <section>
-        <h3>Please select a mascot below</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-<div id="mascots" class="center">
-<script>
-var htmlMascots = '';
-	mascots.sort();
-	jQuery.each(mascots, function(index, value){
-		htmlMascots += '<div class="mascot"><a href="create2.html?mascot=' + value + '"><img src="http://mascot.ga/wp-content/themes/u-design/mascots/' + value + '/icon.png" /><br>' + value.toUpperCase().replace(/-/g, ' ') + '</a></div>';
-	});
-document.write(htmlMascots);
-</script></div>
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+        <h3 align="center">Please select a mascot below</h3>
+	<div id="mascots" class="center">
+			<script>
+			var htmlMascots = '';
+			mascots.sort();
+			jQuery.each(mascots, function(index, value){
+				htmlMascots += '<div class="mascot"><a href="createor.html?mascot=' + value + '"><img src="mascots/' + value + '/icon.png" /><br>' + value.toUpperCase().replace(/-/g, ' ') + '</a></div>';
+			});
+			document.write(htmlMascots);
+			</script>
+	</div>
 
 <p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
       </section>
