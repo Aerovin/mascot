@@ -32,12 +32,12 @@
 
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
 <script>
-			var htmlMascots = '';
-			mascots.sort();
-			jQuery.each(mascots, function(index, value){
-				htmlMascots += '<div class="mascot"><a href="create2.html?mascot=' + value + '"><img src="mascots/' + value + '/icon.png" /><br>' + value.toUpperCase().replace(/-/g, ' ') + '</a></div>';
-			});
-			document.write(htmlMascots);
+var htmlMascots = '';
+	mascots.sort();
+	jQuery.each(mascots, function(index, value){
+		htmlMascots += '<div class="mascot"><a href="create2.html?mascot=' + value + '"><img src="http://mascot.ga/wp-content/themes/u-design/mascots/' + value + '/icon.png" /><br>' + value.toUpperCase().replace(/-/g, ' ') + '</a></div>';
+	});
+document.write(htmlMascots);
 </script>
 <p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
 
