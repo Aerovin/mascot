@@ -1,4 +1,4 @@
-var mascots = new Array('bag', 'book', 'boy', 'bride', 'bunny', 'business-man', 'business-woman', 'character-man', 'character-woman', 'chef', 'cupcake', 'cute-animals', 'doctor', 'dragon', 'fitness', 'fruits', 'girl', 'heart', 'kitten', 'monsters', 'office-man', 'office-woman', 'owl', 'panda', 'penguin', 'phone', 'puppy', 'super-hero', 'super-sentai', 'turtle', 'lion', 'plane', 'sheep', 'reindeer', 'santa', 'elf' );
+var mascots = new Array('plumber', 'house', 'monkey', 'bag', 'book', 'boy', 'bride', 'bunny', 'business-man', 'business-woman', 'character-man', 'character-woman', 'chef', 'cupcake', 'cute-animals', 'doctor', 'dragon', 'fitness', 'fruits', 'girl', 'heart', 'kitten', 'monsters', 'office-man', 'office-woman', 'owl', 'panda', 'penguin', 'phone', 'puppy', 'super-hero', 'super-sentai', 'turtle', 'lion', 'plane', 'sheep', 'reindeer', 'santa', 'elf' );
 
 // Gets current year.
 var year = new Date().getFullYear();

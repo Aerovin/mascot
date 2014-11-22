@@ -35,9 +35,7 @@ body {
 #content {
 float: left;
 width:70%;
-
 }
-
 #rightcol {
 float: left;
 width: 30%;
@@ -323,7 +321,13 @@ footer p + p {
   body {
     padding: 0;
   }
-
+#content {
+width:100%;
+margin:10px 0;
+}
+#rightcol {
+width: 100%;
+}
   .wrapper {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
