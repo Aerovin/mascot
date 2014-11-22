@@ -11,6 +11,14 @@
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <script src="javascripts/scale.fix.js"></script>
+    <script src="javascripts/function.js"></script>
+    <script src="javascripts/jquery.js"></script>
+	<script src="scripts/jscolor/jscolor.js"></script>
+	<script src="scripts/html2canvas.js"></script>
+	<script>
+	var mascot = location.search.split('mascot=')[1];
+	document.write('<script src="mascots/' + mascot + '/settings.js"><\/script>');
+	</script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -22,23 +30,61 @@
         <h1><a href="index.html"><i class="fa fa-paw"></i> Mascot.ga</a></h1>
         <p>Create awesome mascots in seconds</p>
         <ul>
-          <li><a href="create.html">Ready to <strong>Create</strong></a></li>
+          <li><a href="create.html">Start <strong>Create</strong></a></li>
           <li><a href="sample.html">View <strong>Sample</strong></a></li>
           <li><a href="tutorial.html">Learn <strong>Tutorial</strong></a></li>
         </ul>
       </header>
       <section>
+	  <div id="leftcol">
         <h3>Welcome to Mascot.ga</h3>
-<p>Mascot.ga is an easy to use mascot maker that allows you to create awesome mascots in seconds with the click of a couple of buttons. Our purpose with creating Mascot.ga was to provide you a simple and fun experience while making mascots. Once you create your mascots, you can then use them on your websites, on your graphics materials, in your marketing campaigns and even in your projects for your clients.</p>
-<p>Mascot.ga is built to be as simple and user friendly as possible. The tool is pretty self-explanatory and you will most probably get used to using it after you create your first mascot. However, we also have detailed tutorials for you <a href="tutorial.html"><strong>here</strong></a>, and we highly recommend that you go through them before you start.</p>
-<p>If you need further assistance, you can contact our support on this page but before submitting a support ticket please make sure that you went through the tutorials and our knowlege base which has additional answers for common questions. Please also let us know if you have any feedback or suggestions to improve Mascot.ga.</p>
-
-<div class="center" id="create-button"><a href="create.html"><i class="fa fa-paw"></i> Have fun building your mascots!</a></div>
+				<div id="mascot-sections">
+					<script>
+					var htmlMascotSections = '';
+					for (var i = 0; i < mascotSections.length; i++) {
+						htmlMascotSections += '<input type="checkbox" class="mascot-section-checkbox" id="' + mascotSections[i][0] + '-' + mascotSections[i][2] + '-check" ' + ((mascotSections[i][1]) ? 'checked' : '') + ' /><div id="' + mascotSections[i][0] + '-' + mascotSections[i][2] + '" class="mascot-section' + ((mascotSections[i] == mascotSections[0]) ? ' mascot-section-active' : '') + '" onclick="$(\'#mascot-parts\').scrollTop(0);">' + mascotSections[i][0].replace(/_/g, ' ') + '</div>';
+					}
+					document.write(htmlMascotSections);
+					</script>
+					<button type="button" id="random-button" style="margin-top: 10px">Random</button> <img src="images/i.png" title="Creates a random mascot. Experimental.
+It will not always create nice mascots :)" />
+					<button type="button" id="reset-button" style="margin-top: 10px" onClick="document.location.reload(true)" />Reset</button>
+				</div>
+				<script>
+				document.write('<div id="mascot-parts"' + ((mascotSections[0][2] > 10) ? ' style="height: 660px; overflow-y: scroll"' : '') + '>');
+				document.write('<div style="margin-bottom: 3px"><label for="' + mascotSections[0][0] + '-select"><input type="checkbox" id="' + mascotSections[0][0] + '-select" /> Select Multiple</label></div>');
+				htmlMascotParts = '';
+				for (var i = 1; i <= mascotSections[0][2]; i++) {
+					htmlMascotParts += '<img id="' + mascotSections[0][0] + '-' + mascotSections[0][2] + '__' + i + '" class="mascot-part" src="mascots/' + mascot + '/' + mascotSections[0][0] + '-' + i + 'x1.png" width="' + ((mascotSections[0][2] > 10) ? 117 : 126) + '"' + ((mascotSections[0][1] && (i == 1)) ? 'style="border-color: #222"' : '') + ' />';
+				}
+				document.write(htmlMascotParts);
+				document.write('</div>');
+				</script>
+			</div>
+			<div style="clear: both;"></div>
+		</div>
+		<div id="rightcol2">
+					<div id="mascot-preview">
+				<img id="mascot-background-image" src="images/transparent.png" style="max-width: 500px" />
+				<script>
+				htmlMascotPreview = '';
+				for (var i = 0; i < mascotSections.length; i++) {
+					for (var j = 1; j <= mascotSections[i][2]; j++) {
+						htmlMascotPreview += '<img id="' + mascotSections[i][0] + '-' + mascotSections[i][2] + '--' + j + '" class="mascot-preview-part ' + mascotSections[i][0] + '" src="' + ((mascotSections[i][1] && (j == 1)) ? ('mascots/' + mascot + '/' + mascotSections[i][0] + '-1x1.png') : 'images/transparent.png') + '" />';
+					}
+				}
+				document.write(htmlMascotPreview);
+				</script>
+				<img id="watermark-image" src="images/transparent.png" />
+				<img id="logo-image" src="images/transparent.png" />
+			</div>
+			<div style="clear: both;"></div>
+		</div>
       </section>
     </div>
     <footer>
       <p>Project maintained by <a href="https://github.com/aerovin">aerovin</a></p>
-      <p>Hosted on GitHub Pages</p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
     </footer>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
