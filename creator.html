@@ -60,8 +60,30 @@ It will not always create nice mascots :)" />
 				document.write(htmlMascotParts);
 				document.write('</div>');
 				</script>
-			</div>
-			<div style="clear: both;"></div>
+				<h2>Background</h2>
+				<input type="text" id="background-color" value="ffffff" maxlength="6" class="color {caps:false, pickerMode:'HVS', pickerClosable:true, onImmediateChange:'changeBackgroundColor(this);'}" /><br>
+				<input id="background-image-display" type="checkbox" class="sidebar-check" /> <button type="button" id="background-image-button" style="margin-bottom: 1.5px">Image</button> <img src="images/i.png" title="Select background image.
+For best quality, background image size should be
+equal to the mascot size you want to create." /><br>
+				<input type="file" id="background-image-file" onChange="selectBackgroundImage(this);" />
+				<label for="transparent"><input id="transparent" type="checkbox" /> Transparent</label>
+				<h2 style="margin-top: 10px">Other Options</h2>
+				<input id="watermark-display" type="checkbox" class="sidebar-check" /> <button type="button" id="watermark-button">Watermark</button> <img src="images/i.png" title="Select watermark image.
+Watermark image should be placed in the 'user'
+folder and have a size of 500 x 500 pixels." /><br>
+				<input type="file" id="watermark-image-file" onChange="selectWatermarkImage(this);" />
+				<input id="logo-display" type="checkbox" style="float: left; margin: 12px 4px 0 0" /> <button type="button" id="logo-button" style="margin-top: 5px">Logo</button> <img src="images/i.png" title="Select logo image.
+Logo image should be placed in the 'user' folder.
+It will be auto-sized to 25% of the mascot width." /><br>
+				<input type="file" id="logo-image-file" onChange="selectLogoImage(this);" />
+				<select id="mascot-size">
+					<option value="1">500</option>
+					<option value="2">1000</option>
+					<option value="4">2000</option>
+				</select> <span class="note">(width)</span>
+				<button type="button" id="save-button" style="margin-top: 10px">Create</button> <img src="images/i.png" title="Mascot image will be created in a popup window.
+Popups should be enabled in your browser.
+Larger mascots will take longer to be created." />
 		</div>
 		<div id="rightcol2">
 					<div id="mascot-preview">
@@ -78,8 +100,8 @@ It will not always create nice mascots :)" />
 				<img id="watermark-image" src="images/transparent.png" />
 				<img id="logo-image" src="images/transparent.png" />
 			</div>
-			<div style="clear: both;"></div>
 		</div>
+		<div style="clear: both;"></div>
       </section>
     </div>
     <footer>
