@@ -1,0 +1,1 @@
+var mascotSections = new Array(['cave_monster', 1, 9], ['oggy', 0, 8], ['adoidoi', 0, 8], ['scrappycoco', 0, 8], ['mr_nohead', 0, 7], ['curry_fury', 0, 6], ['tiny_pepper', 0, 9], ['frank', 0, 9], ['mr_mars', 0, 7], ['elder_tree', 0, 6], ['others', 0, 5], ['eyes', 1, 8], ['eyebrow_l', 1, 3], ['eyebrow_r', 1, 3], ['mouth', 1, 8], ['moustache', 0, 2], ['accessories', 0, 5]);
