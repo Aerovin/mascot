@@ -77,6 +77,9 @@ cursor: default;
 background: none;
 }
 .holder span { margin: 0 5px; }
+.lazy {
+    display: none;
+}
 #sidebar { float: left; width: 124.5px; margin: 5px 0; padding: 0 0 0 10px }
 #sidebar h2 { margin: 0 0 5px 0; font-size: 16px }
 #sidebar label { font-size: 14px }
