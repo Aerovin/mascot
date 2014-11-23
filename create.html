@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Free Online Mascot Creator | Mascot.ga</title>
+	<meta name="Description" content="Mascot maker that allows you to create awesome mascots in seconds with the click of a couple of buttons.">
+	<meta name="Keywords" content="mascot creator">
+	<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <link rel="stylesheet" href="stylesheets/jPages.css">
+    <link rel="stylesheet" href="stylesheets/animate.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <script src="javascripts/function.js"></script>
+    <script src="javascripts/jquery.js"></script>
+    <script src="javascripts/lazyload.js"></script>
+    <script src="javascripts/jPages.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="index.html"><i class="fa fa-paw"></i> Mascot.ga</a></h1>
+        <p>Create awesome mascots in seconds</p>
+        <ul>
+          <li><a href="create.html">Start <strong>Create</strong></a></li>
+          <li><a href="sample.html">View <strong>Sample</strong></a></li>
+          <li><a href="tutorial.html">Learn <strong>Tutorial</strong></a></li>
+          <li><a href="help.html">Project <strong>Need Help</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h3 align="center">Please select a mascot below</h3>
+	<div id="mascots" class="center">
+			<script>
+			$("img.lazy").show().lazyload();
+			var htmlMascots = '';
+			mascots.sort();
+			jQuery.each(mascots, function(index, value){
+				htmlMascots += '<div class="mascot" id="mascot"><a href="creator.html?mascot=' + value + '"><img class="lazy" data-original="http://mascot.ga/mascots/' + value + '/icon.png" /><noscript><img src="http://mascot.ga/mascots/' + value + '/icon.png"></noscript><p>' + value.toUpperCase().replace(/-/g, ' ') + '</p></a></div>';
+			});
+			document.write(htmlMascots);
+			</script>
+	</div>
+
+<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/aerovin">aerovin</a></p>
+      <p>Hosted on GitHub Pages</p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    <script>
+$(function() {
+    $("img.lazy").lazyload({
+        event : "sporty",
+		effect : "fadeIn"
+    });
+});
+
+$(window).bind("load", function() {
+    var timeout = setTimeout(function() {
+        $("img.lazy").trigger("sporty")
+    }, 5000);
+});
+	</script>
+  </body>
+</html>

@@ -1,0 +1,390 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Free Online Mascot Creator | Mascot.ga</title>
+	<meta name="Description" content="Mascot maker that allows you to create awesome mascots in seconds with the click of a couple of buttons.">
+	<meta name="Keywords" content="mascot creator">
+	<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <script src="javascripts/function.js"></script>
+    <script src="javascripts/jquery.js"></script>
+	<script src="scripts/jscolor/jscolor.js"></script>
+	<script src="scripts/html2canvas.js"></script>
+	<script>
+	var mascot = location.search.split('mascot=')[1];
+	document.write('<script src="mascots/' + mascot + '/settings.js"><\/script>');
+	</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="index.html"><i class="fa fa-paw"></i> Mascot.ga</a></h1>
+        <p>Create awesome mascots in seconds</p>
+        <ul>
+          <li><a href="create.html">Start <strong>Create</strong></a></li>
+          <li><a href="sample.html">View <strong>Sample</strong></a></li>
+          <li><a href="tutorial.html">Learn <strong>Tutorial</strong></a></li>
+          <li><a href="help.html">Project <strong>Need Help</strong></a></li>
+        </ul>
+      </header>
+      <section>
+	  <div id="leftcol">
+        <h3>Welcome to Mascot.ga</h3>
+				<div id="mascot-sections">
+					<script>
+					var htmlMascotSections = '';
+					for (var i = 0; i < mascotSections.length; i++) {
+						htmlMascotSections += '<input type="checkbox" class="mascot-section-checkbox" id="' + mascotSections[i][0] + '-' + mascotSections[i][2] + '-check" ' + ((mascotSections[i][1]) ? 'checked' : '') + ' /><div id="' + mascotSections[i][0] + '-' + mascotSections[i][2] + '" class="mascot-section' + ((mascotSections[i] == mascotSections[0]) ? ' mascot-section-active' : '') + '" onclick="$(\'#mascot-parts\').scrollTop(0);">' + mascotSections[i][0].replace(/_/g, ' ') + '</div>';
+					}
+					document.write(htmlMascotSections);
+					</script>
+					<button type="button" id="random-button" style="margin-top: 10px">Random</button> <img src="images/i.png" title="Creates a random mascot. Experimental.
+It will not always create nice mascots :)" />
+					<button type="button" id="reset-button" style="margin-top: 10px" onClick="document.location.reload(true)" />Reset</button>
+				</div>
+				<script>
+				document.write('<div id="mascot-parts"' + ((mascotSections[0][2] > 10) ? ' style="height: 660px; overflow-y: scroll"' : '') + '>');
+				document.write('<div style="margin-bottom: 3px"><label for="' + mascotSections[0][0] + '-select"><input type="checkbox" id="' + mascotSections[0][0] + '-select" /> Select Multiple</label></div>');
+				htmlMascotParts = '';
+				for (var i = 1; i <= mascotSections[0][2]; i++) {
+					htmlMascotParts += '<img id="' + mascotSections[0][0] + '-' + mascotSections[0][2] + '__' + i + '" class="mascot-part" src="mascots/' + mascot + '/' + mascotSections[0][0] + '-' + i + 'x1.png" width="' + ((mascotSections[0][2] > 10) ? 117 : 126) + '"' + ((mascotSections[0][1] && (i == 1)) ? 'style="border-color: #222"' : '') + ' />';
+				}
+				document.write(htmlMascotParts);
+				document.write('</div>');
+				</script>
+				<h2>Background</h2>
+				<input type="text" id="background-color" value="ffffff" maxlength="6" class="color {caps:false, pickerMode:'HVS', pickerClosable:true, onImmediateChange:'changeBackgroundColor(this);'}" /><br>
+				<input id="background-image-display" type="checkbox" class="sidebar-check" /> <button type="button" id="background-image-button" style="margin-bottom: 1.5px">Image</button> <img src="images/i.png" title="Select background image.
+For best quality, background image size should be
+equal to the mascot size you want to create." /><br>
+				<input type="file" id="background-image-file" onChange="selectBackgroundImage(this);" />
+				<label for="transparent"><input id="transparent" type="checkbox" /> Transparent</label>
+				<h2 style="margin-top: 10px">Other Options</h2>
+				<input id="watermark-display" type="checkbox" class="sidebar-check" /> <button type="button" id="watermark-button">Watermark</button> <img src="images/i.png" title="Select watermark image.
+Watermark image should be placed in the 'user'
+folder and have a size of 500 x 500 pixels." /><br>
+				<input type="file" id="watermark-image-file" onChange="selectWatermarkImage(this);" />
+				<input id="logo-display" type="checkbox" style="float: left; margin: 12px 4px 0 0" /> <button type="button" id="logo-button" style="margin-top: 5px">Logo</button> <img src="images/i.png" title="Select logo image.
+Logo image should be placed in the 'user' folder.
+It will be auto-sized to 25% of the mascot width." /><br>
+				<input type="file" id="logo-image-file" onChange="selectLogoImage(this);" />
+				<select id="mascot-size">
+					<option value="1">500</option>
+					<option value="2">1000</option>
+					<option value="4">2000</option>
+				</select> <span class="note">(width)</span>
+				<button type="button" id="save-button" style="margin-top: 10px">Create</button> <img src="images/i.png" title="Mascot image will be created in a popup window.
+Popups should be enabled in your browser.
+Larger mascots will take longer to be created." />
+		</div>
+		<div id="rightcol2">
+					<div id="mascot-preview">
+				<img id="mascot-background-image" src="images/transparent.png" style="max-width: 500px" />
+				<script>
+				htmlMascotPreview = '';
+				for (var i = 0; i < mascotSections.length; i++) {
+					for (var j = 1; j <= mascotSections[i][2]; j++) {
+						htmlMascotPreview += '<img id="' + mascotSections[i][0] + '-' + mascotSections[i][2] + '--' + j + '" class="mascot-preview-part ' + mascotSections[i][0] + '" src="' + ((mascotSections[i][1] && (j == 1)) ? ('mascots/' + mascot + '/' + mascotSections[i][0] + '-1x1.png') : 'images/transparent.png') + '" />';
+					}
+				}
+				document.write(htmlMascotPreview);
+				</script>
+				<img id="watermark-image" src="images/transparent.png" />
+				<img id="logo-image" src="images/transparent.png" />
+			</div>
+		</div>
+		<div style="clear: both;"></div>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/aerovin">aerovin</a></p>
+      <p>Hosted on GitHub Pages</p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    	<script>
+	// Displays mascot parts on mascot section selection.
+	$('.mascot-section').click(function() {
+		
+		// Controls mascot section highlighting.
+		$('.mascot-section').removeClass('mascot-section-active');
+		$(this).addClass('mascot-section-active');
+		
+		// Displays mascot parts.
+		var sectionId = $(this).attr('id').split('-')[0];
+		var sectionPartCount = $(this).attr('id').split('-')[1];
+		htmlMascotParts = '<div style="margin-bottom: 3px"><label for="' + sectionId + '-select"><input type="checkbox" id="' + sectionId + '-select" /> Select Multiple</label></div><img id="' + $(this).attr('id') + '__1" class="mascot-part" src="mascots/' + mascot + '/' + sectionId + '-1x1.png" width="126" ' + (($('#' + $(this).attr('id') + '-check').is(':checked')) ? 'style="border-color: #222"' : '') + ' /> ';
+		for (i = 2; i <= sectionPartCount; i++) {
+			htmlMascotParts += '<img id="' + $(this).attr('id') + '__' + i + '" class="mascot-part" src="mascots/' + mascot + '/' + sectionId + '-' + i + 'x1.png" width="126" /> ';
+		}
+		$('#mascot-parts').html(htmlMascotParts);
+		$('.mascot-part').css('margin-right', '1px');
+		
+		// Adds scrollbar if necessary.
+		if (sectionPartCount > 10) {
+			$('#mascot-parts').css('height', '660px');
+			$('#mascot-parts').css('overflow-y', 'scroll');
+			$('.mascot-part').css('width', '117px');
+		} else {
+			$('#mascot-parts').css('height', 'auto');
+			$('#mascot-parts').css('overflow', 'auto');
+			$('.mascot-part').css('width', '126px');
+		}
+	});
+	
+	// Changes background color on click.
+	$('#background-color').bind('change', function() {
+		$('#mascot-background-image').attr('src', 'images/transparent.png');
+		$('#mascot-preview').css('background', '#' + $(this).val());
+		if ($('#transparent').is(':checked')) {
+			$('#transparent').prop('checked', false);
+		}
+		if ($('#background-image-display').is(':checked')) {
+			$('#background-image-display').prop('checked', false);
+		}
+	});
+	
+	// Changes background color on drag.
+	function changeBackgroundColor(color) {
+		$('#mascot-preview').css('background', '#' + color);
+	}
+	
+	// Hides or displays mascot sections.
+	$('.mascot-section-checkbox').click(function() {
+		var sectionId = $(this).attr('id').split('-check')[0];
+		if ($('#' + $(this).attr('id')).is(':checked')) {
+			$('#' + sectionId + '--1').attr('src', 'mascots/' + mascot + '/' + sectionId.split('-')[0] + '-1x1.png');
+			$('#' + $(this).attr('id')).css('border-color', '#222');
+		} else {
+			$('.mascot-part').css('border-color', '#ccc');
+			$('.' + sectionId.split('-')[0]).attr('src', 'images/transparent.png');
+		}
+	});
+	
+	// Highlights selected mascot part and updates mascot.
+	var selectedPart = '';
+	$('#mascot-parts').on('click', '.mascot-part', function() {
+		if ($('#' + $(this).attr('id').split('-')[0] + '-select').is(':checked')) {
+			if (selectedPart.indexOf($(this).attr('id')) == -1) {
+				$('#' + $(this).attr('id')).css('border-color', '#222');
+				$('#' + $(this).attr('id').split('__')[0] + '--' + $(this).attr('id').split('__')[1]).attr('src', 'mascots/' + mascot + '/' + $(this).attr('id').split('-')[0] + '-' + $(this).attr('id').split('__')[1] + 'x1.png');
+				selectedPart += $(this).attr('id');
+			} else {
+				$('#' + $(this).attr('id')).css('border-color', '#ccc');
+				$('#' + $(this).attr('id').split('__')[0] + '--' + $(this).attr('id').split('__')[1]).attr('src', 'images/transparent.png');
+				selectedPart = selectedPart.replace($(this).attr('id'), '');
+			}
+			if (!$('#' + $(this).attr('id').split('__')[0] + '-check').is('not:checked')) {
+				$('#' + $(this).attr('id').split('__')[0] + '-check').prop('checked', true);
+			}
+		} else {
+			$('.mascot-part').css('border-color', '#ccc');
+			$('#' + $(this).attr('id')).css('border-color', '#222');
+			$('#' + $(this).attr('id').split('__')[0] + '--1').attr('src', 'mascots/' + mascot + '/' + $(this).attr('id').split('-')[0] + '-' + $(this).attr('id').split('__')[1] + 'x1.png');
+			if (!$('#' + $(this).attr('id').split('__')[0] + '-check').is('not:checked')) {
+				$('#' + $(this).attr('id').split('__')[0] + '-check').prop('checked', true);
+			}
+		}
+	});
+	
+	// Controls background image button.
+	$('#background-image-button').click(function () {
+		$('#background-image-file').trigger('click');
+	});
+	
+	// Displays selected background image on mascot.
+	var backgroundImage;
+	function selectBackgroundImage(input) {
+		if (input.files && input.files[0]) {
+			// Warns if wrong file type is selected.
+			var fileName = $('#background-image-file').val();
+			if ((fileName.toLowerCase().indexOf('.png') == -1) && (fileName.toLowerCase().indexOf('.jpg') == -1) && (fileName.toLowerCase().indexOf('.jpeg') == -1) && (fileName.toLowerCase().indexOf('.gif') == -1)) {
+				$('#background-image-file').val('');
+				alert('Only images are allowed.');
+			} else {
+				var reader = new FileReader();
+				reader.onload = function (e) {
+					var img = new Image;
+					img.onload = function() {
+						$('#mascot-background-image').attr('src', e.target.result);
+						$('#background-image-display').prop('checked', true);
+						backgroundImage = e.target.result;
+					};
+					img.src = reader.result; 
+				};
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
+	}
+	
+	// Displays/hides background image.
+	$('#background-image-display').bind('change', function() {
+		if ($('#background-image-display').is(':checked')) {
+			$('#mascot-background-image').attr('src', backgroundImage);
+		} else {
+			$('#mascot-background-image').attr('src', 'images/transparent.png');
+		}
+	});
+	
+	// Controls transparency.
+	$('#transparent').bind('change', function() {
+		if ($('#transparent').is(':checked')) {
+			$('#mascot-background-image').attr('src', 'images/transparent.png');
+			$('#mascot-preview').css('background', 'url(images/mascot-bg.png)');
+		} else {
+			if ($('#background-image-display').is(':checked')) {
+				$('#mascot-background-image').attr('src', backgroundImage);
+			}
+			$('#mascot-preview').css('background', '#'+$('#background-color').val());
+		}
+	});
+	
+	// Controls watermark button.
+	$('#watermark-button').click(function () {
+		$('#watermark-image-file').trigger('click');
+	});
+	
+	// Displays selected watermark on mascot.
+	var selectedWatermarkImage = 'watermark.png';
+	var watermarkCookie = localStorage.getItem('mascotly-watermark');
+	if (watermarkCookie) {
+		selectedWatermarkImage = watermarkCookie;
+	}
+	
+	function selectWatermarkImage(input) {
+		if (input.files && input.files[0]) {
+			// Warns if wrong file type is selected.
+			var fileName = $('#watermark-image-file').val();
+			if ((fileName.toLowerCase().indexOf('.png') == -1) && (fileName.toLowerCase().indexOf('.jpg') == -1) && (fileName.toLowerCase().indexOf('.jpeg') == -1) && (fileName.toLowerCase().indexOf('.gif') == -1)) {
+				$('#watermark-image-file').val('');
+				alert('Only images are allowed.');
+			} else {
+				var reader = new FileReader();
+				reader.onload = function (e) {
+					var img = new Image;
+					img.onload = function() {
+						$('#watermark-image').attr('src', e.target.result);
+						$('#watermark-display').prop('checked', true);
+						selectedWatermarkImage = $('#watermark-image-file').val().replace(/C:\\fakepath\\/i, '');
+						localStorage.setItem('mascotly-watermark', selectedWatermarkImage);
+					};
+					img.src = reader.result; 
+				};
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
+	}
+	
+	// Displays/hides watermark.
+	$('#watermark-display').bind('change', function() {
+		if ($('#watermark-display').is(':checked')) {
+			$('#watermark-image').attr('src', 'user/' + selectedWatermarkImage);
+		} else {
+			$('#watermark-image').attr('src', 'images/transparent.png');
+		}
+	});
+	
+	// Controls logo button.
+	$('#logo-button').click(function () {
+		$('#logo-image-file').trigger('click');
+	});
+	
+	// Displays selected logo on mascot.
+	var selectedLogoImage = 'logo.png';
+	var logoCookie = localStorage.getItem('mascotly-logo');
+	if (logoCookie) {
+		selectedLogoImage = logoCookie;
+	}
+	
+	function selectLogoImage(input) {
+		if (input.files && input.files[0]) {
+			// Warns if wrong file type is selected.
+			var fileName = $('#logo-image-file').val();
+			if ((fileName.toLowerCase().indexOf('.png') == -1) && (fileName.toLowerCase().indexOf('.jpg') == -1) && (fileName.toLowerCase().indexOf('.jpeg') == -1) && (fileName.toLowerCase().indexOf('.gif') == -1)) {
+				$('#logo-image-file').val('');
+				alert('Only images are allowed.');
+			} else {
+				var reader = new FileReader();
+				reader.onload = function (e) {
+					var img = new Image;
+					img.onload = function() {
+						$('#logo-image').attr('src', e.target.result);
+						$('#logo-image').css('width', '125px');
+						$('#logo-display').prop('checked', true);
+						selectedLogoImage = $('#logo-image-file').val().replace(/C:\\fakepath\\/i, '');
+						localStorage.setItem('mascotly-logo', selectedLogoImage);
+					};
+					img.src = reader.result; 
+				};
+				reader.readAsDataURL(input.files[0]);
+			}
+		}
+	}
+	
+	// Displays/hides logo.
+	$('#logo-display').bind('change', function() {
+		if ($('#logo-display').is(':checked')) {
+			$('#logo-image').attr('src', 'user/' + selectedLogoImage);
+			$('#logo-image').attr('width', '125px');
+		} else {
+			$('#logo-image').attr('src', 'images/transparent.png');
+		}
+	});
+	
+	// Creates random mascot.
+	$('#random-button').click(function() {
+		$('.mascot-preview-part').each(function(i, obj) {
+			if ($('#' + $(this).attr('id')).attr('src') != 'images/transparent.png') {
+				var sectionPartCount = $(this).attr('id').split('--')[0].split('-')[1];
+				var imageSource = 'mascots/' + mascot + '/' + $(this).attr('id').split('-')[0] + '-'+Math.floor(Math.random() * sectionPartCount + 1) + 'x1.png';
+				$('#' + $(this).attr('id')).attr('src', imageSource);
+			}
+		});
+	});
+	
+	// Creates mascot image.
+	$('#save-button').click(function() {
+		var mascotBackgroundImage = $('#mascot-background-image').attr('src');
+		var watermarkImage = $('#watermark-image').attr('src');
+		var logoImage = $('#logo-image').attr('src');
+		var mascotHTML = htmlMascotPreview.replace(/id="/g, 'id="helper-');
+		mascotHTML = '<img id="helper-mascot-background-image" src="' + mascotBackgroundImage + '" />' + mascotHTML + '<img id="helper-watermark-image" src="' + watermarkImage + '" /><img id="helper-logo-image" src="' + logoImage + '" />';
+		
+		$('#mascot-preview-helper').html(mascotHTML);
+		
+		for (var i = 0; i < mascotSections.length; i++) {
+			for (var j = 1; j <= mascotSections[i][2]; j++) {
+				$('#helper-' + mascotSections[i][0] + '-' + mascotSections[i][2] + '--' + j).attr('src', $('#' + mascotSections[i][0] + '-' + mascotSections[i][2] + '--' + j).prop('src').replace('x1', 'x' + $('#mascot-size').val()));
+			}
+		}
+		
+		$('#mascot-preview-helper').css('background', '#'+$('#background-color').val());
+		if ($('#transparent').is(':checked')) $('#mascot-preview-helper').css('background', 'url()');
+		$('#mascot-preview-helper').css('width', 500*$('#mascot-size').val());
+		$('#mascot-preview-helper').css('height', 500*$('#mascot-size').val());
+		$('#helper-watermark-image').css('width', 500*$('#mascot-size').val());
+		$('#helper-mascot-background-image').css('width', 500*$('#mascot-size').val());
+		$('#helper-mascot-background-image').css('max-width', 500*$('#mascot-size').val());
+		$('#helper-logo-image').css('width', 125*$('#mascot-size').val());
+		
+		$('#mascot-preview-helper').css('display', 'block');
+		
+		html2canvas($('#mascot-preview-helper'), {
+			onrendered: function(canvas) {
+				cvs = canvas.toDataURL('image/png');
+				window.open(cvs);
+				$('#mascot-preview-helper').css('display', 'none');
+			}
+		});
+	});
+	</script>
+  </body>
+</html>
