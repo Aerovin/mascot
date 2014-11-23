@@ -30,8 +30,8 @@ section{padding:15px 20px;font-size:15px;border-top:1px solid #fff;background:-w
 #create-button{display:block;margin:0 auto;max-width:300px}
 #create-button a{display:block;padding:10px;background:#8d4bb5;color:#fff;font-size:1em;text-shadow:1px 1px 1px #333;border-radius:2.5px;font-weight:700}
 #create-button a:hover{background:#6c7989;color:#fff}
-#mascots{display:block;float:left;margin:0 5px;padding:0;list-style: none;}
-.mascot{float:left;margin:0 5px}
+#mascots{display:block;float:left;margin:0 5px;padding:0}
+.mascot{float:left;margin:0 5px;list-style: none}
 .mascot a{color:#595959;font-weight:700}
 .mascot img{background:#FFF;margin-bottom:5px;padding:0;border:1px solid #f0f0f0;height:207px;width:175px}
 .mascot:hover a{color:#b992d1}
