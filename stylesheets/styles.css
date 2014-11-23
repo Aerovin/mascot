@@ -49,7 +49,34 @@ section{padding:15px 20px;font-size:15px;border-top:1px solid #fff;background:-w
 
 #mascot-preview { float: left; margin: 5px 0; background: #fff }
 #mascot-preview img, #mascot-preview-helper img { position: absolute }
-
+.holder {
+margin: 15px 0;
+}
+.holder a {
+font-size: 12px;
+cursor: pointer;
+margin: 0 5px;
+color: #333;
+}
+.holder a:hover {
+background-color: #222;
+color: #fff;
+}
+.holder a.jp-previous { margin-right: 15px; }
+.holder a.jp-next { margin-left: 15px; }
+.holder a.jp-current, a.jp-current:hover {
+color: #FF4242;
+font-weight: bold;
+}
+.holder a.jp-disabled, a.jp-disabled:hover {
+color: #bbb;
+}
+.holder a.jp-current, a.jp-current:hover,
+.holder a.jp-disabled, a.jp-disabled:hover {
+cursor: default;
+background: none;
+}
+.holder span { margin: 0 5px; }
 #sidebar { float: left; width: 124.5px; margin: 5px 0; padding: 0 0 0 10px }
 #sidebar h2 { margin: 0 0 5px 0; font-size: 16px }
 #sidebar label { font-size: 14px }
