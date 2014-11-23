@@ -46,7 +46,7 @@ section{padding:15px 20px;font-size:15px;border-top:1px solid #fff;background:-w
 #mascot-parts label { font-size: 14px }
 .mascot-part { margin: 0 5px 5px 0; background: url(images/part-bg.png); border: 1px solid #ccc; border-radius: 10px }
 .mascot-part:hover { cursor: pointer }
-
+#mascots ul li {list-style: none;}
 #mascot-preview { float: left; margin: 5px 0; background: #fff }
 #mascot-preview img, #mascot-preview-helper img { position: absolute }
 .holder {
