@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <link rel="stylesheet" href="stylesheets/jPages.css">
+    <link rel="stylesheet" href="stylesheets/animate.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <script src="javascripts/scale.fix.js"></script>
     <script src="javascripts/function.js"></script>
     <script src="javascripts/jquery.js"></script>
     <script src="javascripts/lazyload.js"></script>
-    <script src="javascripts/animation.js"></script>
     <script src="javascripts/jPages.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
@@ -43,7 +43,7 @@
 			var htmlMascots = '';
 			mascots.sort();
 			jQuery.each(mascots, function(index, value){
-				htmlMascots += '<ul class="mascot"><li><a href="creator.html?mascot=' + value + '"><img class="lazy" data-original="mascots/' + value + '/icon.png" /><noscript><img src="mascots/' + value + '/icon.png"></noscript><br>' + value.toUpperCase().replace(/-/g, ' ') + '</a></li></ul>';
+				htmlMascots += '<div class="mascot" id="mascot"><a href="creator.html?mascot=' + value + '"><img class="lazy" data-original="http://mascot.ga/mascots/' + value + '/icon.png" /><noscript><img src="http://mascot.ga/mascots/' + value + '/icon.png"></noscript><p>' + value.toUpperCase().replace(/-/g, ' ') + '</p></a></div>';
 			});
 			document.write(htmlMascots);
 			</script>
@@ -57,6 +57,19 @@
       <p>Hosted on GitHub Pages</p>
     </footer>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+    <script>
+$(function() {
+    $("img.lazy").lazyload({
+        event : "sporty",
+		effect : "fadeIn"
+    });
+});
+
+$(window).bind("load", function() {
+    var timeout = setTimeout(function() {
+        $("img.lazy").trigger("sporty")
+    }, 5000);
+});
+	</script>
   </body>
 </html>
